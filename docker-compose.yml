@@ -4,8 +4,8 @@ services:
         build:
           context: .
           args:
-            - BRANCH=${BRANCH}
-        image: digitalocean/netbox:${BRANCH}
+            - BRANCH=${BRANCH-master}
+        image: digitalocean/netbox:${BRANCH-master}
         depends_on:
         - postgres
         env_file: netbox.env
